@@ -1,11 +1,19 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Main from "./components/Main";
+import { AuthProvider } from "./contexts/authContext";
+import { ModalContextProvider } from "./contexts/modalContext";
+import { QuestionsProvider } from "./contexts/questionsContext";
 
 function App() {
   return (
-    <div className="feedback-widget-wrapper">
-      <button onClick={()=> alert("Feedback added yayyyy !!")}>Add feedback</button>
-    </div>
+    <AuthProvider>
+      <ModalContextProvider>
+        <QuestionsProvider>
+          <Main />
+        </QuestionsProvider>
+      </ModalContextProvider>
+    </AuthProvider>
   );
 }
 
