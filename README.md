@@ -17,6 +17,8 @@ Make a full stack feedback widget ( widget, dashboard and api ) as per the requi
 4. All the questions are dynamically comming from backend and are shown via a custom DynamicInputGenerator component based on input type
 5. Support for text, mcq, boolean and number questions
 
+Note: Widget view is handled by `showWidget` property in localStorage so if we want to show it again once hidden then delete this property from Application -> local storage -> showWidget -> delete key and refresh page.
+
 ### Dashboard ( React )
 
 * Repo link : https://github.com/theStonedSage/feedback-widget-dashboard-ui
@@ -65,7 +67,7 @@ Easily use the widget anywhere using the webcomponent tag `<feedback-widget />` 
     <title>Document</title>
     
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-    <script defer="defer" src="https://thestonedsage.github.io/feedback-widget-ui/static/js/main.1525cdc9.js"></script>
+    <script defer="defer" src="https://thestonedsage.github.io/feedback-widget-ui/static/js/main.e76e770b.js"></script>
 
 </head>
 <body>
