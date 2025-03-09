@@ -1,17 +1,23 @@
 import React, { useEffect } from "react";
 import { useModal } from "../contexts/modalContext";
+import { useShowWidget } from "../contexts/showWidgetContext";
 import ModalWrapper from "./common/ModalWrapper";
 
 interface IThankYouModal {}
 
 const ThankYouModal: React.FC<IThankYouModal> = ({}) => {
   const { currentModal, setCurrentModal } = useModal();
+  const { setShowWidget } = useShowWidget();
+  const closeModal = () => {
+    setCurrentModal(null);
+    setShowWidget(false);
+  };
 
   useEffect(() => {
     if (currentModal !== "thankyou") {
       return;
     }
-    const timer = setTimeout(() => setCurrentModal(null), 3000);
+    const timer = setTimeout(closeModal, 3000);
     return () => clearTimeout(timer);
   }, [currentModal]);
 
@@ -22,7 +28,7 @@ const ThankYouModal: React.FC<IThankYouModal> = ({}) => {
       okText={"Submit"}
       cancelText="Cancel"
       okProps={{}}
-      onClose={() => setCurrentModal(null)}
+      onClose={closeModal}
       onOkay={() => {}}
       noFooter={true}
     >
