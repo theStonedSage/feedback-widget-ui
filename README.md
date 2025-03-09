@@ -1,46 +1,83 @@
-# Getting Started with Create React App
+# Editorialist React & Node Hiring Test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Make a full stack feedback widget ( widget, dashboard and api ) as per the requirements.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+### Widget ( React as webcomponent )
 
-### `npm start`
+* Repo link : https://github.com/theStonedSage/feedback-widget-ui
+* Live link : https://thestonedsage.github.io/feedback-widget-ui
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* deployment_platform : github pages
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. Easy to embed dynamic widget ( see how to embed below ).
+2. User authentication via firebase auth ( skipable )
+3. Integrate by just adding the scripts and embed the webcomponent tag `<feedback-widget />` anywhere to use it.
+4. All the questions are dynamically comming from backend and are shown via a custom DynamicInputGenerator component based on input type
+5. Support for text, mcq, boolean and number questions
 
-### `npm test`
+### Dashboard ( React )
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* Repo link : https://github.com/theStonedSage/feedback-widget-dashboard-ui
+* Live link : https://feedback-dashboard.netlify.app/
 
-### `npm run build`
+* deployment_platform : netlify 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Login creds
+* email : admin@admin.com
+* password : admin123
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. admin authentication via firebase auth
+2. protected routes so only logged in users can access the dashboard.
+3. Real time updates on new feedbacks submitted using firebase.
+4. Easy modal UI to update and create questions.
+5. Easily Review the feedback in one place
+6. React query cache to prevent repetative calls.
+7. custom hooks to optimize performance and avoid cluttering.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Backend ( Node.js )
 
-### `npm run eject`
+* Repo link : https://github.com/theStonedSage/feedback-widget-api
+* Live link : https://feedback-widget-apiv1-a2e788fc5304.herokuapp.com/
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+* deployment_platform : heroku 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* database : firestore
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+1. adonisjs framework to make things structured
+2. 2 Collections created
+   1. Feedback : store feedback responses from users
+   2. Questions : store questions to be shown on widget feedback form.
+3. Added crud for both the collections
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## How to embed Widget
 
-## Learn More
+Easily use the widget anywhere using the webcomponent tag `<feedback-widget />` and 2 script tags
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <script defer="defer" src="https://thestonedsage.github.io/feedback-widget-ui/static/js/main.1525cdc9.js"></script>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+</head>
+<body>
+    <feedback-widget />
+</body>
+</html>
+```
+
+## Conclusion
+
+Please reach out to amitbhattacharjee@gmail.com in case any service/app goes down during testing. The above app fulfils all the base test requirements. The Ux/Ui and backend could have been improved a lot with more time.
+
+
+
+
