@@ -10,7 +10,6 @@ const QuestionsContext = createContext<{
 const fetchQuestions = async () => {
   const url = `${API_URL}/api/questions`;
   try {
-      console.log("starting fetch call");
     const response = await fetch(url);
     if (!response.ok) {
       throw new Error(`Response status: ${response.status}`);

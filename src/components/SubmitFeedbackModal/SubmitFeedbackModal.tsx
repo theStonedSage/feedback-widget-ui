@@ -28,7 +28,6 @@ const SubmitFeedbackModal: React.FC<ISubmitFeedbackModal> = ({}) => {
       onClose={() => setCurrentModal(null)}
       onOkay={() => {
         const isValid = validateFormData(formInputs);
-        console.log("isValid", isValid);
 
         if (!isValid) {
           setError("Please fill all required fields");

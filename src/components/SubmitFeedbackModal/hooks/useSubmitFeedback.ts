@@ -28,7 +28,6 @@ export const useSubmitFeedback = () => {
       feedback: responsePayloadArray.filter((e) => !!e),
     };
     try {
-      console.log("starting post call");
       const response = await fetch(url, {
         headers: {
           "Content-Type": "application/json",

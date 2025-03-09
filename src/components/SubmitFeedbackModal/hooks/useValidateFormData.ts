@@ -8,7 +8,6 @@ export const useValidateFormData = () => {
     Object.keys(formData).forEach((docId) => {
       const question = questions.find((e) => e.docId === docId);
       const value = formData[docId]?.value || "";
-      console.log("question", question, value.length);
       if (
         question &&
         question.required &&

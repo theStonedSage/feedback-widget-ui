@@ -14,7 +14,6 @@ const SubmitFeedbackForm: React.FC<ISubmitFeedbackForm> = ({ onChange }) => {
     onChange(inputs);
   }, [inputs]);
 
-  console.log("inputs", inputs);
   useEffect(() => {
     setInputs(
       questions.reduce((prev, curr) => {

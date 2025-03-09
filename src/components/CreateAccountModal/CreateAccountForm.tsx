@@ -61,7 +61,6 @@ const CreateAccountForm: React.FC<ICreateAccountForm> = ({ onChange }) => {
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
             const val = e.target.value;
             const resp = PasswordValidator.safeParse(val);
-            console.log("resp", resp);
             setPassword({
               value: val,
               error: !resp.success ? "Please enter at least 6 charachters" : "",
